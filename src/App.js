@@ -15,6 +15,7 @@ import Home from './view/Home';
 import Login  from './view/Login'; 
 import Singup from './view/singup';
 import Filter from './view/filter';
+import Contact from './component/contact';
 
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
         <PublicRoute auth={auth} restricted={false} exact={true} path='/' component={Home}  />
           <PublicRoute restricted={true} auth={auth} exact path='/login' component={Login} />
           <PublicRoute restricted={true} auth={auth} exact path='/singup' component={Singup} />
+          <PublicRoute restricted={true} auth={auth} exact path='/contact' component={Contact} />
 
           <Redirect from='/*' to='/' />
          

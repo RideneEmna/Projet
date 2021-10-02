@@ -28,25 +28,6 @@ function Footer() {
                   
                 </Container>
                 
-                {/* <div>
-            <ul>
-                <li>
-                    <Link to="/home"> Home</Link>
-                </li>
-            </ul>
-
-            <ul>
-                <li>
-                    <Link to="/profile"> Profile</Link>
-                </li>
-            </ul>
-
-            <ul>
-                <li>
-                    <Link to="/login"> Login</Link>
-                </li>
-            </ul>
-        </div> */}
             </Navbar>
 
         </>
