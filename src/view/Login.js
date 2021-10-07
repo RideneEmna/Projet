@@ -1,6 +1,7 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux';
 import { changeAuth } from '../redux/slice';
+import Page1 from '../component/page1';
 
 
 function Login() {
@@ -20,8 +21,6 @@ function Login() {
                 </div>
                 {!auth && <button className='btn btn-primary' onClick={() => dispatch(changeAuth(!auth))}>Login  </button>}
             </form>
-
-            
         </div>
     )
 }

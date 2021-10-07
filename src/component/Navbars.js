@@ -4,8 +4,9 @@ import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { changeAuth } from '../redux/slice';
 import Filter from '../view/filter';
-
-
+import Search from './Search';
+// import SearchOutlined  from  '@ant-design/icons'
+import SearchIcon from '@mui/icons-material/Search';
 
 
 function Navbars() {
@@ -16,11 +17,19 @@ function Navbars() {
   return (
 
     <nav className="navbar navbar-light bg-light" >
-      <div className="container-fluid  "  >
+      
+      <div className="container-fluid "  >
         <Link to="/home" className="nav-link"> <img src="H&M.png" height="50px" width="100px" /> </Link>
-        <form className="d-flex">
+        {/* <form className="d-flex">
           <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
           <button className="btn btn-outline-danger" type="submit">Search</button>
+        </form> */}
+        {/* <SearchOutlined /> */}
+        
+        <form className="d-flex">
+        <Search/>
+        <img src="iconesea.jpg" height="50px" width="100px" /> 
+        {/* <SearchIcon className=" large" /> */}
         </form>
         <Nav className="">
           {auth && <Button className='btn btn-primary' onClick={() => dispatch(changeAuth(!auth))}>Logout  </Button>}
@@ -34,35 +43,19 @@ function Navbars() {
         </button>
         <div className="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
           <div className="offcanvas-header">
-            <h5 className="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
+            <h5 className="offcanvas-title" id="offcanvasNavbarLabel">Catégoris</h5>
             <button type="button" className="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
           </div>
           <div className="offcanvas-body">
-            <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
-              <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#">Home</a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">Link</a>
-              </li>
-              <li className="nav-item dropdown">
-                <a className="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Dropdown
-                </a>
-                <ul className="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
-                  <li><a className="dropdown-item" href="#">Action</a></li>
-                  <li><a className="dropdown-item" href="#">Another action</a></li>
-                  <li>
-                    <hr className="dropdown-divider" />
-                  </li>
-                  <li><a className="dropdown-item" href="#">Something else here</a></li>
-                </ul>
-              </li>
-            </ul>
-            <form className="d-flex">
-              <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-              <button className="btn btn-outline-success" type="submit">Search</button>
-            </form>
+
+            <Link to="/robe" className="nav-link"> Robe</Link>
+            <Link to="/jube" className="nav-link"  >  Jube</Link>
+            <Link to="/pull" className="nav-link"> Pull</Link>
+            <Link to="/sousvet" className="nav-link"> Sous-vétement</Link>
+            <Link to="/sac" className="nav-link"> Sac</Link>
+            <Link to="/pant" className="nav-link"  >  Pantalon</Link>
+            <Link to="/acc" className="nav-link">Accessoire</Link>
+
           </div>
         </div>
       </div>
